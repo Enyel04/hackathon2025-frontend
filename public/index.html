@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascota</title>
+
+    <link href="./output.css" rel="stylesheet">
+   
+   
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-800">
+ <main class="flex items-center justify-center h-screen p-4">
+
+
+
+
+  <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex flex-col items-center pb-6">
+        <span id="noConnectionLabel" class="fixed top-0 left-0 right-0 p-4 text-white text-center ">
+            <label for="" id="noConnectionLabel"></label>
+        </span>
+        <img class="w-24 h-24 mb-3 rounded-full shadow-lg" id="monsterImage" alt="No hay Animal"/>
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white" id="petNameLabel">Monstruo</h5>
+        
+        <div class="flex flex-wrap justify-center items-center space-x-2">
+            <span class="px-3 py-1 text-sm text-gray-500 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-400">
+                Health <label id="healthLabel"></label>
+            </span>
+            <span class="px-3 py-1 text-sm text-gray-500 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-400">
+                Mood <label id="moodLabel"></label>
+            </span>
+            <span class="px-3 py-1 text-sm text-gray-500 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-400">
+                Hunger <label id="hungerLabel"></label>
+            </span>
+            <span class="px-3 py-1 text-sm text-gray-500 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-400">
+                Physical <label id="physicalLabel"></label>
+            </span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 mt-4 w-full px-4">
+            <a href="#" id="create" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Crear</a>
+            <a href="#" id="feedPet" class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700">Alimentar</a>
+            <a href="#" id="playPet" class="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">Jugar</a>
+            <a href="#" class="px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">Acariciar</a>
+            <a href="#" class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700">Regañar</a>
+            <a href="#" id="sleepPet" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">Descansar</a>
+            <a href="#" id="training" class="px-4 py-2 text-sm font-medium text-white bg-orange-600 rounded-lg hover:bg-orange-700 col-span-2">Entrenar</a>
+        </div>
+    </div>
+  </div>
+</main>
+
+<!-- Modal para Alimentar -->
+<div id="feedModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white w-96">
+        <h2 class="text-xl font-semibold mb-4 text-center">Jugar con tu Monstruo</h2>
+        <form id="feedForm">
+            <label for="playWith" class="block mb-1">Jugar con:</label>
+
+            <select id="playWith" name="play_with" class="border rounded-lg p-2 mb-4 w-full">
+                <option class="bg-gray-400" value="bg">Mucho</option>
+                <option class="bg-gray-400" value="md">Mas o Menos</option>
+                <option class="bg-gray-400"  value="sm">Poco</option>
+            </select>
+       
+            <button type="submit" class="w-full px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Alimentar</button>
+        </form>
+        
+    </div>
+</div>
+
+<!-- Modal para Jugar -->
+<div id="playModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white w-96">
+        <h2 class="text-xl font-semibold mb-4 text-center">Jugar con tu Monstruo</h2>
+        <form id="playForm">
+            <label for="playWith" class="block mb-1">Jugar con:</label>
+            <select id="playWith" name="play_with" class="border rounded-lg p-2 mb-4 w-full">
+                <option class="bg-gray-400" value="ball">Pelota</option>
+                <option class="bg-gray-400" value="hide">Escondite</option>
+                <option class="bg-gray-400"  value="draw">Dibujar</option>
+            </select>
+           
+            <button type="submit" class="w-full px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Jugar</button>
+        </form>
+       
+    </div>
+</div>
+
+
+<!-- Modal para Mimir -->
+
+<div id="sleepModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg dark:bg-gray-800 dark:text-white w-96">
+        <h2 class="text-xl font-semibold mb-4 text-center">Mandarlo a Mimir</h2>
+        <form id="playForm">
+            <label for="playWith" class="block mb-1">Jugar con:</label>
+            <select id="playWith" name="play_with" class="border rounded-lg p-2 mb-4 w-full">
+                <option value="ball">Pelota</option>
+                <option value="hide">Escondite</option>
+                <option value="draw">Dibujar</option>
+            </select>
+            <label for="playMood" class="block mb-1">Estado de ánimo:</label>
+            <input type="number" id="playMood" name="mood" min="0" max="100" class="border rounded-lg p-2 mb-4 w-full">
+            <label for="playHunger" class="block mb-1">Hambre:</label>
+            <input type="number" id="playHunger" name="hunger" min="0" max="100" class="border rounded-lg p-2 mb-4 w-full">
+            <button type="submit" class="w-full px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Jugar</button>
+        </form>
+        
+    </div>
+</div>
+
+</body>
+<script src="js/endpoint.js" ></script>
+<script src="js/dataMonster.js"></script>
+<script src="js/openModal.js"></script>
+<script  src="js/hunger.js"></script>
+<script src="js/postMethod.js"></script>
+</html>
